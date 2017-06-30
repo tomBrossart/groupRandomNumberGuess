@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var randomNumber = require('./modules/randomNumber.js');
-
+var rN = 0;
 var path = require('path');
 var port = 8000;
 var bodyParser = require('body-parser');
@@ -10,10 +10,13 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.post("/maxNum", function (req, res){
   var mN = req.body;
-  // var rN = randomNumber(100, 400);
   console.log('received max  Number:', mN.maxNum);
-  // we sent back the mN object with the .maxNum property which logged the selected maxNumber
-  res.send('' + mN.maxNum); //MAKE STRING
+  // Checking to see what our max number is ... Its a string... Which doesnt work in our function
+  console.log(typeof mN.maxNum);
+  // since we have to respond this is our response message
+  res.send({message: 'Random Number now stored on server'}); //MAKE STRING
+  rN = randomNumber(0, Number(mN.maxNum));
+ console.log(rN);
 });
 
 //  TESTING THIS THURSDAY

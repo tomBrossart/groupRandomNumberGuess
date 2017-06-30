@@ -1,5 +1,5 @@
 var maxNum = 0;
-
+var guesses = [];
 
 
 $(document).ready(function() {
@@ -27,7 +27,11 @@ $(document).ready(function() {
       });
   });
 
-
+$('#submit-guess').on('click', function (){
+ var oneGuess = $('#player-one-guess').val();
+  //checking to ensure player one's guess is logged.
+  //console.log(oneGuess);
+});
 
 
 
