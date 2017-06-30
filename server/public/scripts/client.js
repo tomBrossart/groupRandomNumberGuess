@@ -29,8 +29,23 @@ $(document).ready(function() {
 
 $('#submit-guess').on('click', function (){
  var oneGuess = $('#player-one-guess').val();
+ var twoGuess = $('#player-two-guess').val();
+ var threeGuess = $('#player-three-guess').val();
+ var fourGuess = $('#player-four-guess').val();
+ guesses.push(oneGuess, twoGuess, threeGuess, fourGuess);
+ console.log(guesses);
   //checking to ensure player one's guess is logged.
   //console.log(oneGuess);
+  $.ajax({
+    //Here were are sending our guessesArray to the server.
+    type: 'POST',
+    url: '/guesses',
+    data: {guesses: guesses},
+    success: function(response) {
+      console.log("guesses sent");
+      console.log(response);
+      }
+    });
 });
 
 

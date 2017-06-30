@@ -19,6 +19,12 @@ app.post("/maxNum", function (req, res){
  console.log(rN);
 });
 
+app.post("/guesses", function (req, res) {
+  //Here we are receiving our guessesArray from the client.js
+  var guessesArray = req.body;
+  console.log('received guessesArray', guessesArray.guesses);
+  res.send({message: 'Guesses are now on the server'});
+});
 //  TESTING THIS THURSDAY
 // app.get("/setup", function (req, res){
 //   var rN = randomNumber(100, 400);
