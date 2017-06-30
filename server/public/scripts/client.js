@@ -45,7 +45,14 @@ $('#submit-guess').on('click', function (){
     success: function(response) {
       console.log("guesses sent");
       console.log(response.guessChecker);
-      $('#last-guess-one').text(response.guessChecker[0].message)
+      $('#last-guess-one').text(response.guessChecker[0].lastGuess +
+                                " -- " + response.guessChecker[0].message);
+      $('#last-guess-two').text(response.guessChecker[1].lastGuess +
+                                " -- " + response.guessChecker[1].message);
+      $('#last-guess-three').text(response.guessChecker[2].lastGuess +
+                                " -- " + response.guessChecker[2].message);
+      $('#last-guess-four').text(response.guessChecker[3].lastGuess +
+                                " -- " + response.guessChecker[3].message);
       }
     });
 });

@@ -1,14 +1,24 @@
+## IDEAS FOR FUTURE IMPROVEMENTS -- HARD/PRO mode
+  # be able to maintain current game functionality (persisting data)  
+
+
+
+
+
+
+
+
 Team Random Number Guess
 =
 
-In this challenge, you will need to create a new Node project (much like we did in lecture). 
+In this challenge, you will need to create a new Node project (much like we did in lecture).
 
 Base Mode:
 =
 
 The final version of this project will have two modes:
- 
-- setup mode 
+
+- setup mode
 - play mode
 
 ### Tech: Node, Express, and JQuery
@@ -16,9 +26,9 @@ The final version of this project will have two modes:
 Setup Mode
 -
 
-Inputs on the web page: 
+Inputs on the web page:
 
-- Maximum Number selector (at least 3 options) 
+- Maximum Number selector (at least 3 options)
 - Start Game button
 
 ## Play Mode
@@ -37,7 +47,7 @@ Necessary Ingredients
 
 AKA Client Demands...
 
-All random number stuff should happen on the server: Generation of the random number upon game start as well as comparisons between guesses and the random correct answer. Have the random number generator be in its own node module, look back at the Module Madness activity to do this. 
+All random number stuff should happen on the server: Generation of the random number upon game start as well as comparisons between guesses and the random correct answer. Have the random number generator be in its own node module, look back at the Module Madness activity to do this.
 
 Take a moment to discuss with your team members why this is something that a client may demand.
 
@@ -46,7 +56,7 @@ Once you get it working, style it up, yo!
 Hard Mode:
 -
 
-See how many of these you can implement in the given time. Remember to test when applying a feature and make sure your 
+See how many of these you can implement in the given time. Remember to test when applying a feature and make sure your
 
 - disallow two users two submit the same guess at the same time
 - disallow any guess to be entered more than once
