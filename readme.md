@@ -1,5 +1,7 @@
 ## IDEAS FOR FUTURE IMPROVEMENTS -- HARD/PRO mode
-  # be able to maintain current game functionality (persisting data)  
+  # be able to maintain current game functionality (persisting data)
+  # how to reset the game more efficiently  
+    # give inputs a class to reset them as a group 
 
 
 

@@ -31,11 +31,20 @@ app.post("/guesses", function (req, res) {
   res.send({guessChecker: responsesArr});
 });
 
+// PROBABLY DON'T NEED THIS
+// app.post('/reset', function(req, res) {
+//   // here we are receiving our reset request
+//   var resetRequest = req.body;
+//   console.log('received reset request', resetRequest.reset);
+//   rN = 0;
+//   res.send
+// });
+
 
 // a function to check if they were right, too high or too low
 function checkGuesses() {
   responsesArr = [];
-  // Accessed the guesses array from the client Ajax post using the property 
+  // Accessed the guesses array from the client Ajax post using the property
   // of .guesses
   for (i=0; i<guessesArray.guesses.length; i++) {
     if (guessesArray.guesses[i] == rN) {
