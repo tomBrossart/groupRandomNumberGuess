@@ -28,6 +28,7 @@ $(document).ready(function() {
   });
 
 $('#submit-guess').on('click', function (){
+  guesses = [];
  var oneGuess = $('#player-one-guess').val();
  var twoGuess = $('#player-two-guess').val();
  var threeGuess = $('#player-three-guess').val();
@@ -43,7 +44,8 @@ $('#submit-guess').on('click', function (){
     data: {guesses: guesses},
     success: function(response) {
       console.log("guesses sent");
-      console.log(response);
+      console.log(response.guessChecker);
+      $('#last-guess-one').text(response.guessChecker[0].message)
       }
     });
 });

@@ -5,6 +5,8 @@ var rN = 0;
 var path = require('path');
 var port = 8000;
 var bodyParser = require('body-parser');
+var guessesArray = [];
+var responsesArr = [];
 app.use(bodyParser.urlencoded({extended: true}));
 
 
@@ -21,10 +23,43 @@ app.post("/maxNum", function (req, res){
 
 app.post("/guesses", function (req, res) {
   //Here we are receiving our guessesArray from the client.js
-  var guessesArray = req.body;
+  guessesArray = req.body;
   console.log('received guessesArray', guessesArray.guesses);
-  res.send({message: 'Guesses are now on the server'});
+  // run checkGuesses to see if they're right/low/high
+  checkGuesses();
+  console.log(responsesArr);
+  res.send({guessChecker: responsesArr});
 });
+
+
+// a function to check if they were right, too high or too low
+function checkGuesses() {
+  responsesArr = [];
+  // Accessed the guesses array from the client Ajax post using the property 
+  // of .guesses
+  for (i=0; i<guessesArray.guesses.length; i++) {
+    if (guessesArray.guesses[i] == rN) {
+      responsesArr.push({
+        message: "Congrats you won!",
+        player: (i + 1)
+      });
+    }
+    else if (guessesArray.guesses[i] < rN) {
+      responsesArr.push({
+        message: "Too Low!",
+        player: (i + 1),
+        lastGuess: guessesArray.guesses[i],
+      });
+    }
+    else if (guessesArray.guesses[i] > rN) {
+      responsesArr.push({
+        message: "Too High!",
+        player: (i + 1),
+        lastGuess: guessesArray.guesses[i],
+      });
+    }
+  }
+}
 //  TESTING THIS THURSDAY
 // app.get("/setup", function (req, res){
 //   var rN = randomNumber(100, 400);
