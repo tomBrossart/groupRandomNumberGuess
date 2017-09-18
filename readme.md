@@ -1,13 +1,10 @@
+## Overview 
+This was an early group project to practice delegating tasks, understanding a problem/solution in a group, and working under a short timeline. 
+
 ## IDEAS FOR FUTURE IMPROVEMENTS -- HARD/PRO mode
-  # be able to maintain current game functionality (persisting data)
-  # how to reset the game more efficiently  
-    # give inputs a class to reset them as a group 
-
-
-
-
-
-
+- be able to maintain current game functionality (persisting data)
+- how to reset the game more efficiently  
+- give inputs a class to reset them as a group 
 
 
 Team Random Number Guess
